@@ -1,0 +1,7 @@
+# -*- mode: Yaml; -*-
+---
+
+django_project_name: example
+django_system_packages: []
+django_repo: https://github.com/bigjust/ansible-django-example.git
+django_settings_module: example.settings
