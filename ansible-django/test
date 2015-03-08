@@ -12,7 +12,7 @@
 # omit the version to install devel (latest unstable)
 install_ansible "v1.8.4"
 
-ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r $TRAVIS_BUILD_DIR/MotherNatureNetwork/ansible-django/rolespec/travis/tests/ansible-django/requirements.yml
 
 # An assertion which does the following:
 #   - Syntax check on the playbook
