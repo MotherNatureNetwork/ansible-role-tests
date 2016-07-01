@@ -10,20 +10,21 @@
 
 # Install a specific version of Ansible, you can
 # omit the version to install devel (latest unstable)
-install_ansible "v1.8.4"
+# install_ansible "v1.8.4"
 
 
 # An assertion which does the following:
 #   - Syntax check on the playbook
 #   - Run the playbook
-assert_playbook_runs
+assert_playbook_check_runs
 
 # An assertion that re-runs the playbook checking for no changes
 assert_playbook_idempotent
 
-
 assert_in_file "/etc/nginx/nginx.conf" "/var/run/nginx.pid"
+
 assert_running "nginx"
+assert_url "http://localhost:80" 200
 
 # This is where you would add more assert statements for a "real" role
 # Check https://github.com/nickjj/rolespec/README.rst#the-test-api for details
